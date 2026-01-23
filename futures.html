@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>퓨처스 스케줄</title>
+    <title>K 스케줄 - 한화이글스 에디션</title>
     <style>
       /* 1. 폰트 등록 */
       @font-face {
@@ -47,8 +47,8 @@
       .uniform-title {
         font-family: "Eagles-Bold", sans-serif;
         font-size: 1.8rem;
-        color: rgb(8, 30, 60);
-        border-left: 4px solid rgb(8, 30, 60);
+        color: rgb(252, 78, 0);
+        border-left: 4px solid rgb(252, 78, 0);
         /* 3. 위쪽 padding을 0으로 주면 글자가 더 위로 붙습니다 */
         padding: 0px 0px 0px 10px;
         background-color: rgba(255, 255, 255, 0.5);
@@ -74,7 +74,7 @@
 .main-title {
   font-family: "Eagles-Bold", sans-serif;
   font-size: 2.8rem;
-  color: rgb(28, 30, 60);
+  color: rgb(252, 78, 0);
   margin: 0 0 10px 0; /* 아래쪽 여백 추가 */
 }
 
@@ -111,16 +111,17 @@
 }
 
 .status-btn.updated {
-  background-color: rgb(28, 30, 60);
+  background-color: rgb(252, 78, 0);
   color: white;
 }
+
       .tomorrow-badge {
         background-color: #333;
         color: white;
         font-size: 1rem;
         padding: 5px 10px;
         border-radius: 50px;
-        border: 1px solid rgb(8, 30, 60);
+        border: 1px solid rgb(252, 78, 0);
       }
 
       .weather-info {
@@ -162,8 +163,8 @@
       .main-header {
         height: 37px;
         font-family: "Eagles-Bold", sans-serif;
-        background-color: rgb(8, 30, 60);
-        color: rgb(252, 78, 0);
+        background-color: rgb(252, 78, 0);
+        color: rgb(28, 30, 60);
         font-size: 2.1rem;
       }
 
@@ -219,14 +220,14 @@
       .nav-btn:hover {
         transform: translateY(-3px);
         filter: brightness(1.1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
       }
 
       /* 버튼 스타일 (rionic14님의 설정 반영) */
       .development-btn {
         text-decoration: none;
         color: #ffffff;
-        background-color: rgb(252, 78, 0); /* 딥 네이비 */
+        background-color: rgb(28, 30, 60); /* 딥 네이비 */
         padding: 4px 200px;
         border-radius: 10px; /* 더 둥글게 */
         font-size: 1.3rem;
@@ -236,13 +237,14 @@
       }
 
       .development-btn:hover {
-        background-color: rgb(8, 30, 60); /* 한화 오렌지 */
+        background-color: rgb(252, 78, 0); /* 한화 오렌지 */
         transform: translateY(-3px); /* 살짝 떠오르는 효과 */
-        box-shadow: 0 6px 20px rgba(8, 30, 60, 0.3);
+        box-shadow: 0 6px 20px rgba(252, 78, 0, 0.3);
       }
     </style>
   </head>
-<body>
+  
+  <body>
   <div class="container">
     <div class="uniform-container">
       <div class="uniform-title">착용 유니폼</div>
@@ -264,8 +266,8 @@
 
     <div id="display"></div>
   </div> <div class="bottom-link-container">
-    <a href="futures.html" class="nav-btn btn-futures">
-      퓨처스 스케줄 보기
+    <a href="development.html" class="nav-btn btn-development">
+      육성군 스케줄 보기
     </a>
     <a href="monthly.html" class="nav-btn btn-monthly">
       월간 스케줄 보기
@@ -327,7 +329,7 @@
       const imgElement = document.getElementById("uniform-img");
       if (!imgElement) return;
       try {
-        const res = await fetch("uniforms/development-uniform.csv?t=" + new Date().getTime());
+        const res = await fetch("uniforms/uniform.csv?t=" + new Date().getTime());
         const data = await res.text();
         const match = data.trim().split("\n").find((row) => row.startsWith(targetDate));
         if (match) {
@@ -380,4 +382,5 @@
 
     run();
   </script>
-</body></html>
+</body>
+  </html>

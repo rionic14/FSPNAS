@@ -327,7 +327,7 @@
       const imgElement = document.getElementById("uniform-img");
       if (!imgElement) return;
       try {
-        const res = await fetch("uniforms/uniform.csv?t=" + new Date().getTime());
+        const res = await fetch("uniforms/development-uniform.csv?t=" + new Date().getTime());
         const data = await res.text();
         const match = data.trim().split("\n").find((row) => row.startsWith(targetDate));
         if (match) {

@@ -151,7 +151,7 @@
 
       td {
         border: 1px solid #444;
-        padding: 3px;
+        padding: 1px;
         text-align: center;
         font-size: 1.2rem;
         /* 핵심: 행이 적으면 높이를 늘리고, 많으면 줄어들게 함 */
@@ -199,7 +199,7 @@
         width: 400px; /* 버튼 너비를 균일하게 설정 */
         text-align: center;
         border-radius: 10px;
-        font-size: 1.2rem;
+        font-size: 2.3rem;
         font-family: "Eagles-Bold", sans-serif;
         transition: all 0.3s ease;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
@@ -281,7 +281,7 @@
       const btn = document.getElementById("update-btn");
       if (!btn) return;
       try {
-        const response = await fetch("futures.csv?t=" + new Date().getTime(), { method: "HEAD" });
+        const response = await fetch("development.csv?t=" + new Date().getTime(), { method: "HEAD" });
         if (!response.ok) return;
         const lastModified = new Date(response.headers.get("Last-Modified"));
         const diffInHours = (new Date() - lastModified) / (1000 * 60 * 60);
@@ -353,7 +353,7 @@
       updateStatusLabel();
 
       try {
-        const res = await fetch("futures.csv?t=" + new Date().getTime());
+        const res = await fetch("development.csv?t=" + new Date().getTime());
         const csvData = await res.text();
         const rows = csvData.trim().split("\n");
         let html = `<table><colgroup><col style="width: 8%;"><col style="width: 42%;"><col style="width: 8%;"><col style="width: 42%;"></colgroup>`;

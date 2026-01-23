@@ -7,5 +7,5 @@ futures -> development                      dd
 
 
 git add . && git commit -m " 초기화면 로스터까지 넣었음 " && git push origin main
-
+git add . && git commit -m "feat: 상하단 버튼 추가 및 디자인 수정" && git push origin main
   //

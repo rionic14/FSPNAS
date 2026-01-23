@@ -55,7 +55,7 @@
       }
       
       .btn {
-        padding: 15px 30px;
+        padding: 15px 20px;
         font-family: "Eagles-Bold", sans-serif;
         font-size: 1rem;
         color: white;
@@ -74,16 +74,33 @@
       .btn-black  { background-color: rgb(28,30,60); }
       .btn-gray   { background-color: rgb(237, 219, 180);}
 
-      /* 중앙 메인 영역 */
+    
+/* 중앙 메인 영역 (반응형 최적화) */
       .main-content {
         width: 95%;
         max-width: 1100px;
-        height: 30vh;
+        
+        /* 1. 높이 설정: 화면 높이의 75%를 기본으로 하되, 내용에 따라 유동적으로 */
+        height: 75vh; 
+        
+        /* 2. 최소/최대 높이 제한 (너무 작거나 커지지 않게) */
+        min-height: 400px; 
+        max-height: 1200px;
+
         background: white;
         border: 1px solid #ccc;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        margin: 10px 0;
+      }
+
+      /* 3. 모바일(화면 폭 768px 이하)일 때 높이 조절 */
+      @media (max-width: 768px) {
+        .main-content {
+          height: 60vh; /* 모바일에서는 버튼 공간 확보를 위해 조금 줄임 */
+          width: 98%;   /* 옆 공간을 더 넓게 사용 */
+        }
       }
     </style>
   </head>

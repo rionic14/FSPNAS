@@ -358,11 +358,7 @@
   .container {
     margin-top: 5px !important;
   }
-}
-
-      <style>
-  /* ... 기존 스타일 유지 ... */
-
+  
   /* [추가] 인쇄용 제목 스타일 (평소엔 숨김) */
   #print-title {
     display: none;
@@ -467,9 +463,11 @@
     <div id="modal-content" onclick="event.stopPropagation()"></div>
   </div>
     </style>
+  
+  
   </head>
-  <body>
-    <div id="modal-overlay" onclick="closeModal()">
+  
+  <div id="modal-overlay" onclick="closeModal()">
       <div id="modal-content" onclick="event.stopPropagation()"></div>
     </div>
 

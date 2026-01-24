@@ -36,3 +36,52 @@ git pull origin main && git add . && git commit -m " 멘트넣기 " && git push 
 git pull origin main && git add . && git reset futures.csv development.csv && git commit -m "내용 넣기 " && git push origin main
 
   //
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bottom-quote">
+   <span class="kimatta-orion-no-tsuma">2026 OOTA RION | 呉理温</span>
+   <span class="in-tomiokakei-no-kokoro">kei-wo-kangaete</span>
+   <span class="big-text">prsented</span>
+</div>
+
+
+<style>
+  .bottom-quote { /*전체적인 글이 놓이는 위치*/
+    text-align: center;
+    margin: 200px 0;
+    font-family: "JP", sans-serif;
+    font-size: 1.5rem; /* 기본 크기 */
+    color: #555;
+  }
+
+  .in-tomiokakei-no-kokoro {
+    font-size: .01rem;   /* 특정 부분만 크게 */
+    font-family: "JP", sans-serif; /* 서체 변경도 가능 */
+    color: rgb(10, 80, 140); /* 색상 강조 */
+    vertical-align: middle;
+  }
+
+    .kimatta-orion-no-tsuma {
+    font-size: 2.5rem;   /* 특정 부분만 크게 */
+    font-family: "JP", sans-serif;/* 서체 변경도 가능 */
+    color: rgb(100, 40, 230); /* 색상 강조 */
+    vertical-align: middle;
+  }
+
+    .big-text {
+    font-size: 2.5rem;   /* 특정 부분만 크게 */
+    font-family: "Eagles-Bold"; /* 서체 변경도 가능 */
+    color: rgb(252, 78, 0); /* 색상 강조 */
+    vertical-align: middle;
+  }
+</style>

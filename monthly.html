@@ -240,12 +240,21 @@
       }
       #modal-content .event-title,
       #modal-content .event-info,
-      #modal-content .event-desc {
-        white-space: normal;
-        overflow: visible;
-        line-height: 1.3;
-        text-align: center;
-      }
+    /* 모달 내 상세 설명만 왼쪽 정렬 */
+#modal-content .event-desc {
+  font-family: "NotoSansJP-Bold", sans-serif;
+  font-size: 1.8rem;
+  border-top: 2px dashed rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+  width: 90%; /* 너비를 넉넉히 잡고 */
+  
+  /* 핵심 변경 부분 */
+  text-align: left;           /* 텍스트를 왼쪽으로 */
+  margin: 0 auto;             /* 박스 자체는 중앙 유지 */
+  white-space: pre-wrap;      /* 줄바꿈 보존 */
+  word-break: break-word;     /* 긴 단어 끊기 */
+  line-height: 1.5;           /* 읽기 편하게 줄 간격 조정 */
+}
       #modal-content .event-title {
         font-size: 3rem;
         margin-bottom: 15px;

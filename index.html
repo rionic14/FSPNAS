@@ -147,34 +147,35 @@
       window.onload = setEaglesDate;
     </script>
 <style>
- /* 2. 하단 멘트 스타일 정리 */
+  /* 하단 멘트 스타일 최종 수정 */
   .bottom-quote {
-    text-align: center; /* 웹에서는 중앙 정렬이 훨씬 깔끔합니다 */
-    margin: 0px 0 0px 0;
-    line-height: 1.8;
+    text-align: center;
+    margin-top: 40px; /* 위 버튼들과의 간격 확보 */
+    line-height: 1.6;
   }
 
   .big-text {
-    /* 선언한 이름과 토씨 하나 안 틀리게 "Eagles-Gothic" 사용 */
     font-family: "Eagles-Gothic", sans-serif;
     font-size: 1.5rem;
     color: #333;
   }
 
   .secret {
-    font-family: "Eagles-Gothic", sans-serif;
-    font-size: 3rem; /* 대외비 글자 크기 키움 */
-    color: #ff2a00; /* 강렬한 레드 */
+    /* "Eagles-G"에서 "Eagles-Bold"로 수정 (중요!) */
+    font-family: "Eagles-Bold", sans-serif;
+    font-size: 3rem;
+    color: #ff2a00;
     font-weight: bold;
-      margin: 0px 0;
+    display: block; /* 알아서 줄바꿈 되도록 설정 */
+    margin: 5px 0;
   }
 </style>
 
 <div class="bottom-quote">
-  <span class="big-text">본 포털에 업로드 된 모든 문서가</span><span class="secret"><br>대외비</span>
-  <span class="big-text">입니다. <br>관리에 각별히 주의하시기 바랍니다.</span>
+  <span class="big-text">본 포털에 업로드 된 모든 문서가</span>
+  <span class="secret">대외비</span>
+  <span class="big-text">입니다. 관리에 각별히 주의하시기 바랍니다.</span>
 </div>
-</style>
 
 </body>
 </html>

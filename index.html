@@ -8,18 +8,16 @@
     <link rel="apple-touch-icon" href="images/favicon.ico" />
     <link rel="icon" sizes="192x192" href="images/favicon.ico" />
     <style>
-  /* 1. 실제 파일명과 대소문자를 100% 일치시킴 */
+  /* 1. 폰트 선언 (성공한 경로 그대로 사용) */
   @font-face {
     font-family: "Eagles-Bold";
-    /* 실제 파일명: HanwhaEagles-Regular.ttf */
-    src: url("Fonts/HanwhaEagles-Regular.ttf") format("truetype"),
-         url("./Fonts/HanwhaEagles-Regular.ttf") format("truetype");
+    src: url("Fonts/HanwhaEagles-Regular.ttf") format("truetype");
+    font-display: swap;
   }
   @font-face {
     font-family: "Eagles-Gothic";
-    /* 실제 파일명: 06HANWHAGOTHICL.TTF (확장자까지 대문자) */
-    src: url("Fonts/06HANWHAGOTHICL.TTF") format("truetype"),
-         url("./Fonts/06HANWHAGOTHICL.TTF") format("truetype");
+    src: url("Fonts/06HANWHAGOTHICL.TTF") format("truetype");
+    font-display: swap;
   }
 
       body {
@@ -148,35 +146,34 @@
 
       window.onload = setEaglesDate;
     </script>
-  
-<div class="bottom-quote">
-   <span class="big-text">본 포털에 업로드 된 모든 문서가</span>
-   <span class="secret">대외비</span>
-   <span class="big-text">입니다.<br>취급에 각별히 주의하시기 바랍니다.</span>
-  </div>
-
-
 <style>
+ /* 2. 하단 멘트 스타일 정리 */
   .bottom-quote {
-    text-align: left;
-    margin: 20px 0; /* 위쪽 여백을 좀 더 줘서 버튼들과 분리 */
-    line-height: 1.6;
+    text-align: center; /* 웹에서는 중앙 정렬이 훨씬 깔끔합니다 */
+    margin: 0px 0 0px 0;
+    line-height: 1.8;
   }
 
   .big-text {
+    /* 선언한 이름과 토씨 하나 안 틀리게 "Eagles-Gothic" 사용 */
     font-family: "Eagles-Gothic", sans-serif;
     font-size: 1.5rem;
-    color: #333; /* 가독성 좋은 짙은 회색 */
-    vertical-align: middle;
+    color: #333;
   }
 
   .secret {
     font-family: "Eagles-Gothic", sans-serif;
-    font-size: 2rem; /* 대외비 글자 강조 */
-    color: rgb(255, 42, 0); /* 보라색 강조 유지 */
-    vertical-align: middle;
-    margin: 5px 0;
+    font-size: 3rem; /* 대외비 글자 크기 키움 */
+    color: #ff2a00; /* 강렬한 레드 */
+    font-weight: bold;
+      margin: 0px 0;
   }
+</style>
+
+<div class="bottom-quote">
+  <span class="big-text">본 포털에 업로드 된 모든 문서가</span><span class="secret"><br>대외비</span>
+  <span class="big-text">입니다. <br>관리에 각별히 주의하시기 바랍니다.</span>
+</div>
 </style>
 
 </body>

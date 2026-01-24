@@ -8,14 +8,18 @@
     <link rel="apple-touch-icon" href="images/favicon.ico" />
     <link rel="icon" sizes="192x192" href="images/favicon.ico" />
     <style>
+  /* 1. 실제 파일명과 대소문자를 100% 일치시킴 */
   @font-face {
     font-family: "Eagles-Bold";
-    /* 1. 파일명 대소문자가 실제와 똑같은지 확인하세요 (Fonts/fonts, .ttf/.TTF) */
-    src: url("Fonts/HanwhaEagles-Regular.ttf") format("truetype");
+    /* 실제 파일명: HanwhaEagles-Regular.ttf */
+    src: url("Fonts/HanwhaEagles-Regular.ttf") format("truetype"),
+         url("./Fonts/HanwhaEagles-Regular.ttf") format("truetype");
   }
   @font-face {
     font-family: "Eagles-Gothic";
-    src: url("Fonts/06HANWHAGOTHICL.TTF") format("truetype");
+    /* 실제 파일명: 06HANWHAGOTHICL.TTF (확장자까지 대문자) */
+    src: url("Fonts/06HANWHAGOTHICL.TTF") format("truetype"),
+         url("./Fonts/06HANWHAGOTHICL.TTF") format("truetype");
   }
 
       body {

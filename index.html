@@ -44,7 +44,7 @@
         margin: 0;
       }
 
-      .emblem { height: 50px; margin-left: 20px; }
+      .emblem { height: 100px; margin-left: 20px; }
 
    
 
@@ -138,7 +138,7 @@
         const year = now.getFullYear();
         const month = String(now.getMonth() + 1).padStart(2, "0");
         const day = String(now.getDate()).padStart(2, "0");
-        document.getElementById("date-title").innerText = `${year}-${month}-${day} HANWHA EAGLES`;
+        document.getElementById("date-title").innerHTML = `${year}-${month}-${day}<br>HANWHA EAGLES`;
       }
 
       window.onload = setEaglesDate;

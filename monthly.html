@@ -337,12 +337,13 @@
                 ":" +
                 String(new Date(e.start.dateTime).getMinutes()).padStart(2, "0")
               : "";
+              /* 모달 펼쳤을 때 desc 없을 때 자동으로 나오는 내용 넣고 싶다면 저 아래 e.description || " " 여기 부분에 괄호 안에 넣으면 됨 */
             return `
             <div class="modal-item">
               <div class="m-title ${getTextColorClass(e.summary)}">${e.summary}</div>
               <div class="m-info">${e.location || ""}${startTime ? `[${startTime}]` : ""}</div>
               <div class="m-divider"></div>
-              <div class="m-desc">${e.description || "상세 내용이 없습니다."}</div>
+              <div class="m-desc">${e.description || " "}</div>
             </div>`;
           })
           .join("");
@@ -459,7 +460,8 @@
                       <span class="event-title truncate ${getTextColorClass(e.summary)}">${e.summary}</span>
                       <span class="event-info truncate">${e.location || ""}${timeText}</span>
                     </div>`;
-                }).join('<div style="margin: 2px 0; border-top: 1px dashed rgb(252,78,0); width: 80%;"></div>');
+                    /* 일정과 일정 사이 구분선 */
+                }).join('<div style="margin: 1px 0; border-top: 1.5px dashed rgb(252,78,0); width: 80%;"></div>');
                 const moreLabel = dayEvents.length > 2 ? `<span class="has-more red">⚠️추가일정 확인‼</span>` : "";
 
                 cell.innerHTML = `

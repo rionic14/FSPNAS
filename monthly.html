@@ -160,7 +160,7 @@
         font-weight: 700;
         font-size: 1.8rem;
         color: rgb(100, 100, 100);
-        line-height: 1;
+        line-height: 1.5;
       }
       .event-info {
         font-weight: 500;
@@ -175,7 +175,8 @@
         color: rgb(139, 139, 139);
         margin-top: 2px;
       }
-
+      
+      /* 모달 설정 부분 팝업 */
       #modal-overlay {
         display: none;
         position: fixed;
@@ -395,8 +396,7 @@
             const isToday = d.toDateString() === new Date().toDateString();
             const todayClass = isToday ? "today-highlight" : "";
 
-            const color =
-              d.getDay() === 0 ? "red" : d.getDay() === 6 ? "blue" : "black";
+            const color = d.getDay() === 0 ? "red" : d.getDay() === 6 ? "blue" : "rgb(100, 100, 100)";
 
             // th에 class="${todayClass}" 추가
             headerHtml += `<th class="${todayClass}" style="color: ${color}">${d.getMonth() + 1}/${d.getDate()} ${weekDays[d.getDay()]}</th>`;
@@ -415,35 +415,60 @@
             `<td class="team-label label-d">D</td>` + `<td></td>`.repeat(7);
           tbody.appendChild(rowD);
 
-          const fillCells = (row, events) => {
+      const fillCells = (row, events) => {
             const cells = row.querySelectorAll("td:not(.team-label)");
             cells.forEach((cell, idx) => {
               const currentTargetDate = new Date(weekStart);
               currentTargetDate.setDate(weekStart.getDate() + idx);
+              
+              // 1. 해당 날짜 이벤트 필터링
               const dayEvents = events.filter((e) => {
                 const eDate = new Date(e.start.date || e.start.dateTime);
-                return (
-                  eDate.toDateString() === currentTargetDate.toDateString()
-                );
+                return eDate.toDateString() === currentTargetDate.toDateString();
               });
+
+              // 2. 우선순위 정렬 ("-" 포함 여부 1순위 -> 시간순 2순위)
+              dayEvents.sort((a, b) => {
+                const aHasDash = a.summary.includes("-");
+                const bHasDash = b.summary.includes("-");
+                if (aHasDash && !bHasDash) return -1;
+                if (!aHasDash && bHasDash) return 1;
+                const aTime = new Date(a.start.dateTime || a.start.date).getTime();
+                const bTime = new Date(b.start.dateTime || b.start.date).getTime();
+                return aTime - bTime;
+              });
+
+              // 오늘 날짜 강조
+              if (currentTargetDate.toDateString() === new Date().toDateString()) {
+                cell.classList.add("today-highlight");
+              }
+
               if (dayEvents.length > 0) {
-                const e = dayEvents[0];
-                const startTime = e.start.dateTime
-                  ? new Date(e.start.dateTime).getHours() +
-                    ":" +
-                    String(new Date(e.start.dateTime).getMinutes()).padStart(
-                      2,
-                      "0",
-                    )
-                  : "";
+                // 3. 최대 2개까지만 노출하도록 HTML 생성
+                const displayEvents = dayEvents.slice(0, 2);
+                const eventsHtml = displayEvents.map((e, i) => {
+                  // 첫 번째 일정(i === 0)일 때만 시간을 계산하고 표시함
+                  let timeText = "";
+                  if (i === 0 && e.start.dateTime) {
+                    const start = new Date(e.start.dateTime);
+                    timeText = `[${start.getHours()}:${String(start.getMinutes()).padStart(2, "0")}]`;
+                  }
+
+                  return `
+                    <div style="width: 100%; text-align: center;">
+                      <span class="event-title truncate ${getTextColorClass(e.summary)}">${e.summary}</span>
+                      <span class="event-info truncate">${e.location || ""}${timeText}</span>
+                    </div>`;
+                }).join('<div style="margin: 2px 0; border-top: 1px dashed rgb(252,78,0); width: 80%;"></div>');
+                const moreLabel = dayEvents.length > 2 ? `<span class="has-more red">⚠️추가일정 확인‼</span>` : "";
+
                 cell.innerHTML = `
                   <div class="event-container">
-                    <span class="event-title truncate ${getTextColorClass(e.summary)}">${e.summary}</span>
-                    <span class="event-info truncate">${e.location || ""}${startTime ? `[${startTime}]` : ""}</span>
-                    ${dayEvents.length > 1 ? `<span class="has-more">+ 더보기</span>` : ""}
+                    ${eventsHtml}
+                    ${moreLabel}
                   </div>`;
-                cell.querySelector(".event-container").onclick = () =>
-                  openModal(dayEvents);
+                
+                cell.querySelector(".event-container").onclick = () => openModal(dayEvents);
               }
             });
           };

@@ -139,27 +139,30 @@
       }
 
       /* 4. 표 스타일 - 화면 높이에 맞게 가변 설정 */
-      #display {
-        height: 90%; /* 화면 높이의 약 70%를 표가 차지하도록 설정 */
-        display: flex;
-      }
+     /* 표가 들어가는 컨테이너 */
+#display {
+  width: 100%;
+  /* 화면 전체 높이(100vh)에서 헤더와 버튼이 차지하는 약 250px을 뺀 나머지를 다 써라 */
+  height: calc(100vh - 250px); 
+  overflow-y: auto; /* 일정이 너무 많으면 표 안에서만 스크롤 */
+  display: flex;
+}
 
-      table {
-        width: 100%;
-        height: 100%; /* 부모(#display) 높이를 가득 채움 */
-        border-collapse: collapse;
-        table-layout: fixed;
-        background: white;
-      }
+table {
+  width: 100%;
+  height: 100%; /* 부모인 #display 높이를 100% 다 채워라 (가변의 핵심) */
+  border-collapse: collapse;
+  table-layout: fixed; /* 셀 너비 고정 */
+}
 
-      td {
-        border: 1px solid #444;
-        padding: 1px;
-        text-align: center;
-        font-size: 1.2rem;
-        /* 핵심: 행이 적으면 높이를 늘리고, 많으면 줄어들게 함 */
-        height: auto;
-      }
+td {
+  border: 1px solid #444;
+  padding: 4px;
+  text-align: center;
+  font-size: 1.2rem;
+  /* 아래 설정이 있으면 행 개수가 적을 때 알아서 등분해서 늘어납니다 */
+  height: auto; 
+}
 
       /* 제목 행(투수/야수)은 너무 늘어나지 않게 적당한 높이 유지 */
       .main-header {

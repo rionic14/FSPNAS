@@ -1,6 +1,15 @@
 //
 
-futures -> development                      dd             
+동기화 명령어-----------------------------------
+git pull origin main && git add . && git commit -m " 멘트넣기 " && git push origin main
+
+스케줄 CSV파일 제외 명령어
+git pull origin main && git add . && git reset futures.csv development.csv && git commit -m "내용 넣기 " && git push origin main
+
+  //
+
+
+futures -> development                          
 252, 78, 0 을 25252525 로 바꾼다 
 28, 30, 60을 252, 78, 0로 바꾼다 
 25252525를 28, 30, 60로 바꾼다
@@ -25,26 +34,6 @@ AIzaSyAluwiwfHMYHBoAZe5EAXAiejet-s_Pwl8
 
 육성군 カレンダー ID
 ca9502e51d0b0bd07eaa8ab7dbbc3925b69576439b0642b072dc79015eed8d11@group.calendar.google.com
-
-
-
-
-동기화 명령어
-git pull origin main && git add . && git commit -m " 멘트넣기 " && git push origin main
-
-스케줄 CSV파일 제외 명령어
-git pull origin main && git add . && git reset futures.csv development.csv && git commit -m "내용 넣기 " && git push origin main
-
-  //
-
-
-
-
-
-
-
-
-
 
 
 

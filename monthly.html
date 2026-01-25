@@ -67,8 +67,12 @@
         border-radius: 5px;
         color: white;
       }
-      .btn-futures { background-color: rgb(252, 78, 0); }
-      .btn-dev { background-color: rgb(28, 30, 60); }
+      .btn-futures {
+        background-color: rgb(252, 78, 0);
+      }
+      .btn-dev {
+        background-color: rgb(28, 30, 60);
+      }
 
       table {
         width: 100%;
@@ -76,7 +80,8 @@
         table-layout: fixed;
       }
 
-      th, td {
+      th,
+      td {
         border: 1px solid #ccc;
         height: 125px;
         vertical-align: middle;
@@ -92,7 +97,8 @@
         vertical-align: middle;
       }
 
-      .week-separator td, .week-separator th {
+      .week-separator td,
+      .week-separator th {
         border-bottom: 3px solid rgb(28, 30, 60) !important;
       }
 
@@ -117,59 +123,131 @@
         font-family: "Eagles-Bold";
       }
 
-      td { padding: 0 !important; height: 110px; }
+      td {
+        padding: 0 !important;
+        height: 110px;
+      }
 
       .event-container {
-        width: 100%; height: 100%;
-        display: flex; flex-direction: column;
-        align-items: center; justify-content: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
-        padding: 0 5px; 
+        padding: 0 5px;
         box-sizing: border-box;
-        overflow: hidden; 
+        overflow: hidden;
       }
 
       .truncate {
-        white-space: nowrap !important; 
+        white-space: nowrap !important;
         overflow: hidden;
-        text-overflow: clip; 
+        text-overflow: clip;
         display: block;
         width: 100%;
         text-align: center;
       }
       /* 오늘 날짜 강조 스타일 */
-.today-highlight {
-  background-color: #fff9e6 !important; /* 연한 노란색 */
-  border: 2px solid rgb(252, 78, 0) !important; /* 한화 오렌지색 테두리 */
-}
-/* 이게 핵심이여 내용 셀 일정 시간 넣는거 */
-      .event-title { font-weight: 700; font-size: 1.8rem; line-height: 1; }
-      .event-info { font-weight: 500; font-size: 1.5rem; color: #333; line-height: 1; margin-top: 5px; }
-      .has-more { font-weight: 800; font-size: 1.2rem; color: rgb(139, 139, 139); margin-top: 2px; }
+      .today-highlight {
+        background-color: #fff9e6 !important; /* 연한 노란색 */
+        border: 2px solid rgb(252, 78, 0) !important; /* 한화 오렌지색 테두리 */
+      }
+      /* 이게 핵심이여 내용 셀 일정 시간 넣는거 */
+      .event-title {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: rgb(100, 100, 100);
+        line-height: 1;
+      }
+      .event-info {
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: #333;
+        line-height: 1;
+        margin-top: 5px;
+      }
+      .has-more {
+        font-weight: 800;
+        font-size: 1.2rem;
+        color: rgb(139, 139, 139);
+        margin-top: 2px;
+      }
 
       #modal-overlay {
-        display: none; position: fixed; top: 0; left: 0;
-        width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7);
-        z-index: 1000; justify-content: center; align-items: center;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
       }
       #modal-content {
-        width: 70%; height: 90%; background: white; border-radius: 15px;
-        padding: 40px; overflow-y: auto; box-sizing: border-box;
+        width: 70%;
+        height: 90%;
+        background: white;
+        border-radius: 15px;
+        padding: 40px;
+        overflow-y: auto;
+        box-sizing: border-box;
       }
-      .modal-item { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 3px solid #000; }
-      .modal-item:last-child { border-bottom: none; }
-      .m-title { font-size: 4rem; font-weight: 800; text-align: center; margin-bottom: 10px; }
-      .m-info { font-size: 3.4rem; font-weight: 500; text-align: center; color: #444; }
-      .m-divider { border-top: 3.4px dashed #ccc; margin: 20px 0; }
-      .m-desc { font-size: 2.5rem; text-align: left; line-height: 1.6; white-space: pre-wrap; }
+      .modal-item {
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 3px solid #000;
+      }
+      .modal-item:last-child {
+        border-bottom: none;
+      }
+      .m-title {
+        font-size: 4rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .m-info {
+        font-size: 3.4rem;
+        font-weight: 500;
+        text-align: center;
+        color: #444;
+      }
+      .m-divider {
+        border-top: 3.4px dashed #ccc;
+        margin: 20px 0;
+      }
+      .m-desc {
+        font-size: 2.5rem;
+        text-align: left;
+        line-height: 1.6;
+        white-space: pre-wrap;
+      }
 
-      .orange { color: rgb(252, 78, 0) !important; }
-      .navy { color: rgb(28, 30, 60) !important; }
-      .green { color: rgb(140, 210, 70) !important; }
-      .blue { color: rgb(0, 190, 210) !important; }
-      .red { color: rgb(194, 0, 0) !important; }
+      .orange {
+        color: rgb(252, 78, 0) !important;
+      }
+      .navy {
+        color: rgb(28, 30, 60) !important;
+      }
+      .green {
+        color: rgb(140, 210, 70) !important;
+      }
+      .blue {
+        color: rgb(0, 190, 210) !important;
+      }
+      .red {
+        color: rgb(194, 0, 0) !important;
+      }
 
-      #loading { text-align: center; font-family: "Eagles-Bold"; padding: 20px; }
+      #loading {
+        text-align: center;
+        font-family: "Eagles-Bold";
+        padding: 20px;
+      }
 
       /* [인쇄 설정] 프린트 시 한 장에 맞춤 */
       @media print {
@@ -182,7 +260,8 @@
           padding: 0;
           zoom: 0.52; /* 6주 분량이 한 장에 들어오도록 전체 축소 (필요시 조절) */
         }
-        .btn-container, #loading {
+        .btn-container,
+        #loading {
           display: none !important; /* 인쇄 시 버튼과 로딩 문구 제외 */
         }
         table {
@@ -203,13 +282,17 @@
   <body>
     <div class="top-container">
       <div class="title-wrapper">
-        <img src="images/emblem.png" alt="Futures Logo" class="logo-img">
+        <img src="images/emblem.png" alt="Futures Logo" class="logo-img" />
         <a href="index.html" class="main-title">퓨처스/육성군 스케줄 (~6주)</a>
-        <img src="images/italic.png" alt="Development Logo" class="logo-img">
+        <img src="images/italic.png" alt="Development Logo" class="logo-img" />
       </div>
       <div class="btn-container">
-        <a href="futures.html" class="nav-btn btn-futures">퓨처스 일일스케줄 보기</a>
-        <a href="development.html" class="nav-btn btn-dev">육성군 일일스케줄 보기</a>
+        <a href="futures.html" class="nav-btn btn-futures"
+          >퓨처스 일일스케줄 보기</a
+        >
+        <a href="development.html" class="nav-btn btn-dev"
+          >육성군 일일스케줄 보기</a
+        >
       </div>
     </div>
 
@@ -218,7 +301,7 @@
     </table>
 
     <div class="bottom-quote">
-      <span style="font-size: 1.5rem;"></span>
+      <span style="font-size: 1.5rem"></span>
     </div>
 
     <div id="loading">데이터 로딩 중...</div>
@@ -244,25 +327,31 @@
       }
 
       function openModal(events) {
-        const modalContent = document.getElementById('modal-content');
-        modalContent.innerHTML = events.map(e => {
-          const startTime = e.start.dateTime 
-            ? new Date(e.start.dateTime).getHours() + ":" + String(new Date(e.start.dateTime).getMinutes()).padStart(2, "0") 
-            : "";
-          return `
+        const modalContent = document.getElementById("modal-content");
+        modalContent.innerHTML = events
+          .map((e) => {
+            const startTime = e.start.dateTime
+              ? new Date(e.start.dateTime).getHours() +
+                ":" +
+                String(new Date(e.start.dateTime).getMinutes()).padStart(2, "0")
+              : "";
+            return `
             <div class="modal-item">
               <div class="m-title ${getTextColorClass(e.summary)}">${e.summary}</div>
               <div class="m-info">${e.location || ""}${startTime ? `[${startTime}]` : ""}</div>
               <div class="m-divider"></div>
               <div class="m-desc">${e.description || "상세 내용이 없습니다."}</div>
             </div>`;
-        }).join('');
-        document.getElementById('modal-overlay').style.display = 'flex';
+          })
+          .join("");
+        document.getElementById("modal-overlay").style.display = "flex";
       }
 
-      document.getElementById('modal-overlay').addEventListener('click', function(e) {
-        if (e.target === this) this.style.display = 'none';
-      });
+      document
+        .getElementById("modal-overlay")
+        .addEventListener("click", function (e) {
+          if (e.target === this) this.style.display = "none";
+        });
 
       async function fetchEvents(calId, start, end) {
         const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calId)}/events?key=${API_KEY}&timeMin=${start.toISOString()}&timeMax=${end.toISOString()}&singleEvents=true&orderBy=startTime`;
@@ -270,7 +359,9 @@
           const response = await fetch(url);
           const data = await response.json();
           return data.items || [];
-        } catch (e) { return []; }
+        } catch (e) {
+          return [];
+        }
       }
 
       async function render() {
@@ -278,7 +369,7 @@
         const firstSunday = new Date(now.setDate(now.getDate() - now.getDay()));
         firstSunday.setHours(0, 0, 0, 0);
         const lastDay = new Date(firstSunday);
-        lastDay.setDate(firstSunday.getDate() + 42); 
+        lastDay.setDate(firstSunday.getDate() + 42);
 
         const [fEvents, dEvents] = await Promise.all([
           fetchEvents(CALS.F, firstSunday, lastDay),
@@ -290,34 +381,37 @@
 
         for (let w = 0; w < 6; w++) {
           const weekStart = new Date(firstSunday);
-          weekStart.setDate(firstSunday.getDate() + (w * 7));
+          weekStart.setDate(firstSunday.getDate() + w * 7);
 
           const headerRow = document.createElement("tr");
           headerRow.className = "date-header-row";
           let headerHtml = `<th style="width: 35px; border: none; background: none"></th>`;
           for (let i = 0; i < 7; i++) {
-  const d = new Date(weekStart);
-  d.setDate(weekStart.getDate() + i);
-  
-  // 오늘 날짜인지 확인
-  const isToday = d.toDateString() === new Date().toDateString();
-  const todayClass = isToday ? "today-highlight" : "";
-  
-  const color = d.getDay() === 0 ? "red" : (d.getDay() === 6 ? "blue" : "black");
-  
-  // th에 class="${todayClass}" 추가
-  headerHtml += `<th class="${todayClass}" style="color: ${color}">${d.getMonth() + 1}/${d.getDate()} ${weekDays[d.getDay()]}</th>`;
-}
+            const d = new Date(weekStart);
+            d.setDate(weekStart.getDate() + i);
+
+            // 오늘 날짜인지 확인
+            const isToday = d.toDateString() === new Date().toDateString();
+            const todayClass = isToday ? "today-highlight" : "";
+
+            const color =
+              d.getDay() === 0 ? "red" : d.getDay() === 6 ? "blue" : "black";
+
+            // th에 class="${todayClass}" 추가
+            headerHtml += `<th class="${todayClass}" style="color: ${color}">${d.getMonth() + 1}/${d.getDate()} ${weekDays[d.getDay()]}</th>`;
+          }
           headerRow.innerHTML = headerHtml;
           tbody.appendChild(headerRow);
 
           const rowF = document.createElement("tr");
-          rowF.innerHTML = `<td class="team-label label-f">F</td>` + `<td></td>`.repeat(7);
+          rowF.innerHTML =
+            `<td class="team-label label-f">F</td>` + `<td></td>`.repeat(7);
           tbody.appendChild(rowF);
 
           const rowD = document.createElement("tr");
-          rowD.className = "week-separator"; 
-          rowD.innerHTML = `<td class="team-label label-d">D</td>` + `<td></td>`.repeat(7);
+          rowD.className = "week-separator";
+          rowD.innerHTML =
+            `<td class="team-label label-d">D</td>` + `<td></td>`.repeat(7);
           tbody.appendChild(rowD);
 
           const fillCells = (row, events) => {
@@ -327,18 +421,28 @@
               currentTargetDate.setDate(weekStart.getDate() + idx);
               const dayEvents = events.filter((e) => {
                 const eDate = new Date(e.start.date || e.start.dateTime);
-                return eDate.toDateString() === currentTargetDate.toDateString();
+                return (
+                  eDate.toDateString() === currentTargetDate.toDateString()
+                );
               });
               if (dayEvents.length > 0) {
                 const e = dayEvents[0];
-                const startTime = e.start.dateTime ? new Date(e.start.dateTime).getHours() + ":" + String(new Date(e.start.dateTime).getMinutes()).padStart(2, "0") : "";
+                const startTime = e.start.dateTime
+                  ? new Date(e.start.dateTime).getHours() +
+                    ":" +
+                    String(new Date(e.start.dateTime).getMinutes()).padStart(
+                      2,
+                      "0",
+                    )
+                  : "";
                 cell.innerHTML = `
                   <div class="event-container">
                     <span class="event-title truncate ${getTextColorClass(e.summary)}">${e.summary}</span>
                     <span class="event-info truncate">${e.location || ""}${startTime ? `[${startTime}]` : ""}</span>
                     ${dayEvents.length > 1 ? `<span class="has-more">+ 더보기</span>` : ""}
                   </div>`;
-                cell.querySelector('.event-container').onclick = () => openModal(dayEvents);
+                cell.querySelector(".event-container").onclick = () =>
+                  openModal(dayEvents);
               }
             });
           };
@@ -350,44 +454,45 @@
       render();
     </script>
 
-<div class="bottom-quote">
-  Presented by OOTA RION | 大田理温 2026
-   <span class="kimatta-orion-no-tsuma"></span>
-   <span class="in-tomiokakei-no-kokoro">kei-wo-kangaete. oreno-no-tonikaiterumamaninarukara</span>
-   <span class="big-text">HANWHA EAGLES 2026</span>
-</div>
+    <div class="bottom-quote">
+      Presented by OOTA RION | 大田理温 2026
+      <span class="kimatta-orion-no-tsuma"></span>
+      <span class="in-tomiokakei-no-kokoro"
+        >kei-wo-kangaete. oreno-no-tonikaiterumamaninarukara</span
+      >
+      <span class="big-text">HANWHA EAGLES 2026</span>
+    </div>
 
+    <style>
+      .bottom-quote {
+        /*전체적인 글이 놓이는 위치*/
+        text-align: center;
+        margin: 10px 0;
+        font-family: "JP", sans-serif;
+        font-size: 0.8rem; /* 기본 크기 */
+        color: #555;
+      }
 
-<style>
-  .bottom-quote { /*전체적인 글이 놓이는 위치*/
-    text-align: center;
-    margin: 10px 0;
-    font-family: "JP", sans-serif;
-    font-size: .8rem; /* 기본 크기 */
-    color: #555;
-  }
+      .in-tomiokakei-no-kokoro {
+        font-size: 0.01rem; /* 특정 부분만 크게 */
+        font-family: "JP", sans-serif; /* 서체 변경도 가능 */
+        color: rgb(10, 80, 140); /* 색상 강조 */
+        vertical-align: middle;
+      }
 
-  .in-tomiokakei-no-kokoro {
-    font-size: .01rem;   /* 특정 부분만 크게 */
-    font-family: "JP", sans-serif; /* 서체 변경도 가능 */
-    color: rgb(10, 80, 140); /* 색상 강조 */
-    vertical-align: middle;
-  }
+      .kimatta-orion-no-tsuma {
+        font-size: 2.5rem; /* 특정 부분만 크게 */
+        font-family: "JP", sans-serif; /* 서체 변경도 가능 */
+        color: rgb(100, 40, 230); /* 색상 강조 */
+        vertical-align: middle;
+      }
 
-    .kimatta-orion-no-tsuma {
-    font-size: 2.5rem;   /* 특정 부분만 크게 */
-    font-family: "JP", sans-serif;/* 서체 변경도 가능 */
-    color: rgb(100, 40, 230); /* 색상 강조 */
-    vertical-align: middle;
-  }
-
-    .big-text {
-    font-size: 2.5rem;   /* 특정 부분만 크게 */
-    font-family: "Eagles-Bold"; /* 서체 변경도 가능 */
-    color: rgb(252, 78, 0); /* 색상 강조 */
-    vertical-align: middle;
-  }
-</style>
-
+      .big-text {
+        font-size: 2.5rem; /* 특정 부분만 크게 */
+        font-family: "Eagles-Bold"; /* 서체 변경도 가능 */
+        color: rgb(252, 78, 0); /* 색상 강조 */
+        vertical-align: middle;
+      }
+    </style>
   </body>
 </html>

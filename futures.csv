@@ -1,13 +1,16 @@
 pitchers,,position players
-0700,BREAKFAST,0700,BREAKFAST
-0900,STAFF MEETING,0900,STAFF MEETING
-0930,선수단 전체 미팅(로비),0930,선수단 던체 미팅(로비)
-1000,훈련,1000,훈련
-1200,중식,1200,중식
-1300,오후훈련,1300,오후훈련
-1400,CONDITIONIG,1400,BP
-1600,EXTRA,1600,EXTRA
-1730,DINNER,1730,DINNER
+0700, BREAKFAST
+0900, STAFF MEETING
+0925, TEAM MEETING
+0930, W-UP
+0950, PHYSICAL TRAINING/WEIGHT TRAINING
+1130, LUNCH
+1300, LOOSEN UP
+1310, B/P ROTATION
+1730, DINNER
+1900, NIGHT DRILL
 1900,INDIVIDUAL,1900,INDIVIDUAL
 기타사항,1. [화이트 착용시 👉 화이트 연습복]   /  [ <span style="color: orange;">오렌지</span> 착용시 👉 <span style="color: navy;">네이비</span> 연습복]<br>2. 선수단 전체미팅 시 신규 코칭스탭 인사 예정
+
+	
 

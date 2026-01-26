@@ -368,21 +368,36 @@ td {
       /**
        * 4. 메인 실행
        */
+     /**
+       * 4. 메인 실행 (GMT+9 한국 시간 기준)
+       */
       async function run() {
         const now = new Date();
-        if (now.getHours() >= 18) now.setDate(now.getDate() + 1);
-        const dateStr = now.toISOString().split("T")[0];
+        
+        // 1. 오후 6시(18시) 이후라면 날짜를 내일로 넘김
+        if (now.getHours() >= 18) {
+          now.setDate(now.getDate() + 1);
+        }
 
+        // 2. GMT+9 기준의 년-월-일 문자열 생성 (시차 오류 해결)
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const dateStr = `${year}-${month}-${day}`;
+
+        // 화면 날짜 텍스트 업데이트
         document.getElementById("date-text").innerText =
-          `${dateStr} 육성군 SCHEDULE`;
+          `${dateStr} 퓨처스 SCHEDULE`;
 
+        // 나머지 기능 호출
         updateWeatherOnly();
         loadUniformImage(dateStr);
         updateStatusLabel();
 
         try {
-          const res = await fetch("development.csv?t=" + new Date().getTime());
+          const res = await fetch("futures.csv?t=" + new Date().getTime());
           const csvData = await res.text();
+          // ... (이후 CSV 처리 로직은 동일)
           const rows = csvData.trim().split("\n");
           let html = `<table><colgroup><col style="width: 8%;"><col style="width: 42%;"><col style="width: 8%;"><col style="width: 42%;"></colgroup>`;
 

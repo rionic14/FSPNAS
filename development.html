@@ -396,7 +396,7 @@
         updateStatusLabel();
 
         try {
-          const res = await fetch("futures.csv?t=" + new Date().getTime());
+          const res = await fetch("development.csv?t=" + new Date().getTime());
           const csvData = await res.text();
           // ... (이후 CSV 처리 로직은 동일)
           const rows = csvData.trim().split("\n");

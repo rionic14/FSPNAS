@@ -136,32 +136,37 @@
         margin-right: 5px;
       }
 
-      /* 4. 표 스타일 - 화면 높이에 맞게 가변 설정 */
-      /* 표가 들어가는 컨테이너 */
-      #display {
-        width: 100%;
-        /* 화면 전체 높이(100vh)에서 헤더와 버튼이 차지하는 약 250px을 뺀 나머지를 다 써라 */
-        height: calc(100vh - 250px);
-        overflow-y: auto; /* 일정이 너무 많으면 표 안에서만 스크롤 */
-        display: flex;
-      }
+/* 4. 표 스타일 - 디바이스 높이에 맞춤 */
+#display {
+  width: 100%;
+  /* 상단 헤더와 하단 버튼의 높이를 제외한 나머지를 꽉 채움 
+     사용자님의 레이아웃 기준 대략 280px~300px 정도를 빼면 
+     스크롤 없이 한 화면에 딱 들어와.
+  */
+  min-height: calc(100vh - 300px); 
+  display: flex;
+  flex-direction: column;
+}
 
-      table {
-        width: 100%;
-        height: 100%; /* 부모인 #display 높이를 100% 다 채워라 (가변의 핵심) */
-        border-collapse: collapse;
-        table-layout: fixed; /* 셀 너비 고정 */
-      }
+table {
+  width: 100%;
+  /* 표의 내용이 적어도 화면 아래까지 쭉 늘어나게 함 */
+  height: 100%; 
+  border-collapse: collapse;
+  table-layout: fixed;
+  flex: 1; /* flex 안에서 남은 공간을 다 차지함 */
+}
 
-      td {
-        border: 1px solid #444;
-        padding: 4px;
-        text-align: center;
-        font-size: 1.2rem;
-        /* 아래 설정이 있으면 행 개수가 적을 때 알아서 등분해서 늘어납니다 */
-        height: auto;
-        white-space: pre-wrap;
-      }
+td {
+  border: 1px solid #444;
+  padding: 3px;
+  text-align: center;
+  font-size: 1.2rem;
+  /* 행의 개수가 적을 때 자동으로 등분해서 높이를 맞춤 */
+  height: auto; 
+  white-space: pre-wrap;
+}
+      
       /* 제목 행(투수/야수)은 너무 늘어나지 않게 적당한 높이 유지 */
       .main-header {
         height: 37px;

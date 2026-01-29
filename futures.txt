@@ -1,0 +1,20 @@
+pitchers,,position players
+
+0700, - BREAKFAST,0700, BREAKFAST
+0900, - STAFF MEETING,0900, STAFF MEETING
+0930, - WARMING UP,0930, W-UP
+,&MOBILITY,0950, WEIGHT TRAINING
+,AM - Care Program,,PHYSICAL TRAINING
+1100, -  TOSS,1130, LUNCH
+,- PITCHING < A 조 >,1300, LOOSEN UP
+,민서 동영 겸재 경모 종혁 범준 승일 관우 동준,1310, BASE RUNNING
+,- DEFENSE < B 조 >,1330, B/P ROTATION
+,도빈 선률 이황 요셉 부성 건우 유호 준영 현승,,A(B/P): 윤호 도훈 동휘 주진 재환
+,- NET THROW  - CONDITIONING,,B(T-BAR): 경빈 승수 승현 김건
+1200, - LUNCH,,C(T-B/P): 석진 지성 준수 현규
+1300, - DRILL 3  -  WEIGHT TRAINING,,D(D/F): 로결 인호 민재 해찬 우성
+,EXTRA,1510, EXTRA
+1730, - DINNER,1730, DINNER
+1900, - NIGHT DRILL,1900, NIGHT DRILL
+
+기타사항,1. [화이트 착용시 👉 화이트 연습복]   /  [ <span style="color: orange;">오렌지</span> 착용시 👉 <span style="color: navy;">네이비</span> 연습복]

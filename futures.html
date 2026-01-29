@@ -293,7 +293,7 @@ td {
         if (!btn) return;
         try {
           const response = await fetch(
-            "futures.csv?t=" + new Date().getTime(),
+            "futures.txt?t=" + new Date().getTime(),
             { method: "HEAD" },
           );
           if (!response.ok) return;
@@ -397,7 +397,7 @@ td {
         updateStatusLabel();
 
         try {
-          const res = await fetch("futures.csv?t=" + new Date().getTime());
+          const res = await fetch("futures.txt?t=" + new Date().getTime());
           const csvData = await res.text();
           // ... (이후 CSV 처리 로직은 동일)
           const rows = csvData.trim().split("\n");

@@ -1,15 +1,17 @@
 pitchers,,position players
-0700, BREAKFAST
-0900, STAFF MEETING
-0925, TEAM MEETING
-0930, W-UP
-0950, PHYSICAL TRAINING/WEIGHT TRAINING
-1130, LUNCH
-1300, LOOSEN UP
-1310, B/P ROTATION
-1730, DINNER
-1900, NIGHT DRILL
-1900,INDIVIDUAL,1900,INDIVIDUAL
+0700, BREAKFAST,07:00 , BREAKFAST
+0900, STAFF MEETING,09:00 , STAFF MEETING
+0925, TEAM MEETING,09:30 , TEAM MEETING
+0930, W-UP,09:40 , WARMING UP & MOBILITY
+0950, PHYSICAL TRAINING,AM , Care Program
+,WEIGHT TRAINING,10:00 , SOFT TOSS
+1130, LUNCH,,DEFENSE
+1300, LOOSEN UP,,CONDITIONING
+1310, B/P                     ROTATION,11:30 , LUNCH
+1730, DINNER,13:00 , DRILL 1
+1900, NIGHT DRILL,,WEIGHT TRAINING
+,,17:30 , DINNER
+,,19:00 , NIGHT DRILL
 기타사항,1. [화이트 착용시 👉 화이트 연습복]   /  [ <span style="color: orange;">오렌지</span> 착용시 👉 <span style="color: navy;">네이비</span> 연습복]<br>2. 선수단 전체미팅 시 신규 코칭스탭 인사 예정
 
 	

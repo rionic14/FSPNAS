@@ -376,7 +376,7 @@ td {
       async function run() {
         const now = new Date();
 
-        // 1. 오후 6시(18시) 이후라면 날짜를 내일로 넘김
+        // 1. 오후 4시(16시) 이후라면 날짜를 내일로 넘김
         if (now.getHours() >= 16) {
           now.setDate(now.getDate() + 1);
         }

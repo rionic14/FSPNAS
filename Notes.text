@@ -4,7 +4,7 @@
 git pull origin main && git add . && git commit -m " 멘트넣기 " && git push origin main
 
 스케줄 CSV파일 제외 명령어
-git pull origin main && git add . && git reset futures.csv development.csv && git commit -m "내용 넣기 " && git push origin main
+git pull origin main && git add . && git reset futures.txt development.csv && git commit -m "내용 넣기 " && git push origin main
 
   //
 

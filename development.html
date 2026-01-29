@@ -292,7 +292,7 @@
         if (!btn) return;
         try {
           const response = await fetch(
-            "development.csv?t=" + new Date().getTime(),
+            "development.txt?t=" + new Date().getTime(),
             { method: "HEAD" },
           );
           if (!response.ok) return;
@@ -375,7 +375,7 @@
       async function run() {
         const now = new Date();
 
-        // 1. 오후 6시(18시) 이후라면 날짜를 내일로 넘김
+        // 1. 오후 4시(16시) 이후라면 날짜를 내일로 넘김
         if (now.getHours() >= 16) {
           now.setDate(now.getDate() + 1);
         }
@@ -396,7 +396,7 @@
         updateStatusLabel();
 
         try {
-          const res = await fetch("development.csv?t=" + new Date().getTime());
+          const res = await fetch("development.txt?t=" + new Date().getTime());
           const csvData = await res.text();
           // ... (이후 CSV 처리 로직은 동일)
           const rows = csvData.trim().split("\n");

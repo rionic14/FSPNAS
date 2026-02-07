@@ -1,3 +1,5 @@
+// 원래 csv를 읽도록 설계했는데, 중간에 txt로 바꿈
+
 pitchers,,position players
 0700, BREAKFAST,07:00 , BREAKFAST
 0900, STAFF MEETING,09:00 , STAFF MEETING
